@@ -47,10 +47,33 @@ public class Test1 {
     @Test
     public void t1() {
 
-        Integer n = 2;
+        Integer n = 1;
         boolean flag = true;
 
         while (flag) {
+            System.out.println(8899);
+            System.out.println("开始下载第几页：" + n);
+            JSONObject object = userService.addArticle(n);
+            System.out.println(object.toJSONString());
+            System.out.println();
+            Integer success = object.getInteger("success");
+            Integer fail = object.getInteger("fail");
+
+            if (success == 25 && fail == 0) {
+                n++;
+            } else {
+                flag = false;
+            }
+        }
+    }
+
+    @Test
+    public void t111() {
+
+        Integer n = 46;
+        boolean flag = true;
+
+        while (flag && n <= 190) {
             System.out.println(8899);
             System.out.println("开始下载第几页：" + n);
             JSONObject object = userService.addArticle(n);
@@ -156,11 +179,11 @@ public class Test1 {
 
         int size = 10;
 
-        while(size > 0){
+        while (size > 0) {
             List<Tarticle> article = this.getArticle(params);
-            if (CollectionUtils.isEmpty(article)){
+            if (CollectionUtils.isEmpty(article)) {
                 size = 0;
-            }else{
+            } else {
                 for (Tarticle tarticle : article) {
                     userService.analysisArticleContentById(tarticle.getId());
                 }
@@ -181,11 +204,11 @@ public class Test1 {
         params.put("imgs", "");
         int size = 1;
 
-        while(size > 0){
+        while (size > 0) {
             List<Tarticle> tarticles = this.getArticle(params);
-            if (CollectionUtils.isEmpty(tarticles)){
+            if (CollectionUtils.isEmpty(tarticles)) {
                 size = 0;
-            }else{
+            } else {
                 tarticles.parallelStream().forEach(tarticle -> {
                     System.out.println("开始更新文章id： " + tarticle.getId());
                     userService.updateArticleImageNum(tarticle.getId());

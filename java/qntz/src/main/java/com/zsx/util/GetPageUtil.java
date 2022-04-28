@@ -40,6 +40,18 @@ public class GetPageUtil {
 //
                 Elements elementsByClass = article.getElementsByClass("posts-gallery-img");
 
+                String createDate = "";
+                {
+                    Elements postsGalleryContent = article.getElementsByClass("posts-gallery-content");
+                    Element element = postsGalleryContent.last();
+                    Elements icoTime = element.getElementsByClass("ico-time");
+                    Element first = icoTime.first();
+
+                    //System.out.println(first.text());
+
+                    createDate = first.text();
+                }
+
                 Element element1 = elementsByClass.get(0);
 
 //                获取链接
@@ -53,7 +65,9 @@ public class GetPageUtil {
                     tarticle.setTitle(a.attr("title").trim());
                     tarticle.setSuccess("0");
                     tarticle.setContent(element1.html());
-                    tarticle.setCreateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+                    tarticle.setImgs("");
+                    //tarticle.setCreateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+                    tarticle.setCreateTime(createDate);
 
                     articleList.add(tarticle);
                 }

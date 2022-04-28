@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
         List<String> successList = Lists.newArrayList();
         List<String> failList = Lists.newArrayList();
 //        下载第几页的文章
-        String url = "http://qingniantuzhai.com/page/" + page + "/";
+        String url = "https://qingniantuzhai.com/page/" + page + "/";
 //        解析网页地址，主要获取 标题 和 url链接
         List<Tarticle> tarticles = GetPageUtil.parsePage(url);
         if (CollectionUtils.isNotEmpty(tarticles)) {

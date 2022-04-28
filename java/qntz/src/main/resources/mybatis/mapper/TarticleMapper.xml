@@ -21,9 +21,9 @@
     </select>
 
     <insert id="insert" parameterType="com.zsx.entity.Tarticle">
-        insert into t_article (title, href, content, success, create_time)
+        insert into t_article (title, href, content, success, imgs, create_time)
         values (#{title,jdbcType=VARCHAR}, #{href,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}
-        , #{success,jdbcType=VARCHAR}, #{imgs,jdbcType=VARCHAR}), #{createTime,jdbcType=VARCHAR})
+        , #{success,jdbcType=VARCHAR}, #{imgs,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR})
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.zsx.entity.Tarticle">
         update t_article
