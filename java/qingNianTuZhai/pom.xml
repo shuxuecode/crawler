@@ -19,7 +19,7 @@
         <pagehelper.version>4.1.6</pagehelper.version>
         <fastjson.version>1.2.16</fastjson.version>
         <druid.version>1.0.25</druid.version>
-        <apache.poi.version>3.17</apache.poi.version>
+        <apache.poi.version>4.1.1</apache.poi.version>
     </properties>
 
     <parent>
