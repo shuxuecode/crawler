@@ -65,7 +65,7 @@
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
-            <version>4.1.6</version>
+            <version>5.3.1</version>
         </dependency>
 
         <!-- 阿里巴巴fastjson，解析json视图 -->
