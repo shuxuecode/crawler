@@ -1,10 +1,10 @@
 去官网下载 http://download.eclipse.org/jetty/
  
-![](file/111.png)
+![](image/111.png)
 
 然后解压到指定目录下，运行start.jar 启动
 
-![](file/222.png) 
+![](image/222.png) 
 
 这种方式无法快捷关闭，需要 在命令行中打指令
 
